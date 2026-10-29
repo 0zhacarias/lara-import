@@ -1,0 +1,65 @@
+{
+    "name": "kuteka/laravel-import",
+    "description": "Package Laravel genérico e independente de domínio para importações assíncronas de CSV/Excel com chunks, filas, transmissão de progresso, repetições e suporte multi-inquilino.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "laravel",
+        "importacao",
+        "csv",
+        "excel",
+        "xlsx",
+        "fila",
+        "assincrono",
+        "reverb",
+        "multi-inquilino"
+    ],
+    "authors": [
+        {
+            "name": "Kuteka",
+            "email": "dev@kuteka.co"
+        }
+    ],
+    "require": {
+        "php": "^8.3",
+        "illuminate/broadcasting": "^13.0",
+        "illuminate/cache": "^13.0",
+        "illuminate/console": "^13.0",
+        "illuminate/contracts": "^13.0",
+        "illuminate/database": "^13.0",
+        "illuminate/filesystem": "^13.0",
+        "illuminate/http": "^13.0",
+        "illuminate/notifications": "^13.0",
+        "illuminate/queue": "^13.0",
+        "illuminate/routing": "^13.0",
+        "illuminate/support": "^13.0",
+        "maatwebsite/excel": "^3.1"
+    },
+    "require-dev": {
+        "pestphp/pest": "^4.0"
+    },
+    "suggest": {
+        "laravel/horizon": "Dashboard e gestão da fila Redis usada pelas importações.",
+        "laravel/reverb": "Servidor WebSocket para atualizações em tempo real do progresso das importações.",
+        "spatie/laravel-multitenancy": "Suporte multi-inquilino via o adaptador ContextoInquilinoSpatie incluído.",
+        "ext-redis": "Necessária para usar a fila Redis (recomendada em produção)."
+    },
+    "autoload": {
+        "psr-4": {
+            "Kuteka\\LaravelImport\\": "src/",
+            "Kuteka\\LaravelImport\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Kuteka\\LaravelImport\\LaravelImportServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
